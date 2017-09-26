@@ -1,0 +1,25 @@
+@(contacts : List[Contact])
+
+@main("List of Contacts"){
+	<table>
+		<thead>
+			<tr>
+			<td>ID </td>
+			<td>NAME </td>
+			<td>E-MAIL </td>
+			</tr>
+		</thead>
+		<tbody>
+			@for(contact <- contacts){
+				<tr>
+					<td>@contact.id</td>
+					<td>@contact.name</td>
+					<td>@contact.email</td>
+				</tr>
+				
+			}
+		</tbody>	
+	</table>
+	
+		<a href="@routes.ContactsController.newContact()">"Create a new Contact"</a>
+}
